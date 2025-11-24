@@ -24,11 +24,11 @@ workflows:
 
       - name: Build APK
         script: |
-          flutter build apk --release --build-number=${CM_BUILD_NUMBER}
+          flutter build apk --release --build-number=1
 
       - name: Build iOS
         script: |
-          flutter build ipa --release --build-number=${CM_BUILD_NUMBER}
+          flutter build ipa --release --build-number=1
 
     artifacts:
       - build/**/outputs/**/*.apk
