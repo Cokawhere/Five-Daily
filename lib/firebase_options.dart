@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -40,49 +41,49 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyD0Sxd4qDkopS8-XIVJBIlETlwCu6lTFqM',
-    appId: '1:846509490664:web:ba9b2a728db634c43d245d',
-    messagingSenderId: '846509490664',
-    projectId: 'news-app-7d99b',
-    authDomain: 'news-app-7d99b.firebaseapp.com',
-    storageBucket: 'news-app-7d99b.firebasestorage.app',
-    measurementId: 'G-QTXH6CXNS6',
+  static FirebaseOptions web = FirebaseOptions(
+    apiKey: dotenv.env['WEB_API_KEY']!,
+    appId: dotenv.env['WEB_APP_ID']!,
+    messagingSenderId: dotenv.env['WEB_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['WEB_PROJECT_ID']!,
+    authDomain: dotenv.env['WEB_AUTH_DOMAIN'],
+    storageBucket: dotenv.env['WEB_STORAGE_BUCKET'],
+    measurementId: dotenv.env['WEB_MEASUREMENT_ID'],
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCELT55-osgcmZ1h411Su9ow9Hkvze_BMg',
-    appId: '1:846509490664:android:24575f8184090ccc3d245d',
-    messagingSenderId: '846509490664',
-    projectId: 'news-app-7d99b',
-    storageBucket: 'news-app-7d99b.firebasestorage.app',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['ANDROID_API_KEY']!,
+    appId: dotenv.env['ANDROID_APP_ID']!,
+    messagingSenderId: dotenv.env['ANDROID_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['ANDROID_PROJECT_ID']!,
+    storageBucket: dotenv.env['ANDROID_STORAGE_BUCKET'],
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBW87JUHQEEFOZ3kRj9lgG_xDTeQ7EqMNU',
-    appId: '1:846509490664:ios:8bf6a7dc329834d03d245d',
-    messagingSenderId: '846509490664',
-    projectId: 'news-app-7d99b',
-    storageBucket: 'news-app-7d99b.firebasestorage.app',
-    iosBundleId: 'com.example.newsApp',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['IOS_API_KEY']!,
+    appId: dotenv.env['IOS_APP_ID']!,
+    messagingSenderId: dotenv.env['IOS_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['IOS_PROJECT_ID']!,
+    storageBucket: dotenv.env['IOS_STORAGE_BUCKET'],
+    iosBundleId: dotenv.env['IOS_BUNDLE_ID'],
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBW87JUHQEEFOZ3kRj9lgG_xDTeQ7EqMNU',
-    appId: '1:846509490664:ios:8bf6a7dc329834d03d245d',
-    messagingSenderId: '846509490664',
-    projectId: 'news-app-7d99b',
-    storageBucket: 'news-app-7d99b.firebasestorage.app',
-    iosBundleId: 'com.example.newsApp',
+  static FirebaseOptions macos = FirebaseOptions(
+    apiKey: dotenv.env['MACOS_API_KEY']!,
+    appId: dotenv.env['MACOS_APP_ID']!,
+    messagingSenderId: dotenv.env['MACOS_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['MACOS_PROJECT_ID']!,
+    storageBucket: dotenv.env['MACOS_STORAGE_BUCKET'],
+    iosBundleId: dotenv.env['MACOS_BUNDLE_ID'],
   );
 
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyD0Sxd4qDkopS8-XIVJBIlETlwCu6lTFqM',
-    appId: '1:846509490664:web:d023945192476f663d245d',
-    messagingSenderId: '846509490664',
-    projectId: 'news-app-7d99b',
-    authDomain: 'news-app-7d99b.firebaseapp.com',
-    storageBucket: 'news-app-7d99b.firebasestorage.app',
-    measurementId: 'G-S9N6HYSN8P',
+  static FirebaseOptions windows = FirebaseOptions(
+    apiKey: dotenv.env['WINDOWS_API_KEY']!,
+    appId: dotenv.env['WINDOWS_APP_ID']!,
+    messagingSenderId: dotenv.env['WINDOWS_MESSAGING_SENDER_ID']!,
+    projectId: dotenv.env['WINDOWS_PROJECT_ID']!,
+    authDomain: dotenv.env['WINDOWS_AUTH_DOMAIN'],
+    storageBucket: dotenv.env['WINDOWS_STORAGE_BUCKET'],
+    measurementId: dotenv.env['WINDOWS_MEASUREMENT_ID'],
   );
 }
