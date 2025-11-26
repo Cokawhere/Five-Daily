@@ -18,17 +18,17 @@ workflows:
         script: |
           flutter analyze
 
-      # - name: Run tests
-        # script: |
-        #   flutter test
+      - name: Run tests
+        script: |
+          flutter test
 
       - name: Build APK
         script: |
           flutter build apk --release --build-number=1
 
-      - name: Build iOS
-        script: |
-          flutter build ipa --release --build-number=1
+      # - name: Build iOS
+      #   script: |
+      #     flutter build ipa --release --build-number=1
 
     artifacts:
       - build/**/outputs/**/*.apk
