@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.news_app"
+    namespace = "com.example.lens"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
